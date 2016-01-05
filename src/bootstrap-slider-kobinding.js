@@ -7,11 +7,11 @@ ko.bindingHandlers.slider = {
             if (ko.isObservable(params[property]))
                 params[property] = ko.unwrap(params[property]);
         }
-
+		
         $(element).slider(params);
 
         $(element).on('change', function (ev) {
-            valueObservable(ev.newValue);
+            valueObservable(ev.value.newValue);
         });
     },
     update: function (element, valueAccessor, allBindings, viewModel, bindingContext) {
